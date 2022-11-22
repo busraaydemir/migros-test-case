@@ -1,0 +1,21 @@
+<div (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" [class.collapsed]="collapsed"
+    [class.open]="collapsed && (collapsedOpen$ | async)" class="sidenav flex flex-col">
+    <div class="sidenav-toolbar flex-none flex items-center">
+        <button (click)="toggleCollapse()" class="w-8 h-8 -mr-2 leading-none flex-none" mat-icon-button type="button">
+            <mat-icon *ngIf="!collapsed" [icIcon]="icRadioButtonChecked" size="14px"></mat-icon>
+            <mat-icon *ngIf="collapsed" [icIcon]="icRadioButtonUnchecked" size="14px"></mat-icon>
+        </button>
+    </div>
+
+    <div class="sidenav-items flex-auto mb-10">
+        <a class="item" matRipple [href]="item.route" *ngFor="let item of items">
+            <span *ngIf="collapsed && [false, undefined, null].includes(collapsedOpen$ | async) && item.badge" [style.background]="item.badge.background"
+                [style.color]="item.badge.color" class="item-badge item-icon-badge">
+                {{ item.badge.value }}
+            </span>
+            <span class="item-label">{{ item.label }}</span>
+            <span *ngIf="item.badge" [style.background]="item.badge.background" [style.color]="item.badge.color"
+                class="item-badge" fxFlex="none">{{ item.badge.value }}</span>
+        </a>
+    </div>
+</div>
