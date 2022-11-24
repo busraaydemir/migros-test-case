@@ -1,0 +1,11 @@
+:host {
+    ::ng-deep {
+        .mat-button-wrapper {
+            @apply flex;
+        }
+    }
+
+    .product-list-item {
+        height: 200px;
+    }
+}
