@@ -2,7 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav';
 import { LayoutService } from '../services/layout.service';
+import { untilDestroyed, UntilDestroy } from '@ngneat/until-destroy';
 
+UntilDestroy()
 @Component({
   selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
@@ -19,9 +21,7 @@ export class MainLayoutComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.layoutService.sidenavOpen$.pipe(
-      // untilDestroyed(this)
-    ).subscribe(open => open ? this.sidenav?.open() : this.sidenav?.close());
+    this.layoutService.sidenavOpen$.subscribe(open => open ? this.sidenav?.open() : this.sidenav?.close());
   }
 
 }
