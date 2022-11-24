@@ -13,6 +13,7 @@
                 [style.color]="item.badge.color" class="item-badge item-icon-badge">
                 {{ item.badge.value }}
             </span>
+            <mat-icon [icIcon]="item.icon" class="item-icon" fxFlex="none"></mat-icon>
             <span class="item-label">{{ item.label }}</span>
             <span *ngIf="item.badge" [style.background]="item.badge.background" [style.color]="item.badge.color"
                 class="item-badge" fxFlex="none">{{ item.badge.value }}</span>

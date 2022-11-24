@@ -22,6 +22,9 @@
                     .item-label {
                         opacity: 0;
                     }
+                    .item-icon {
+                        margin-inline-end: 1.5rem;
+                    }
                 }
             }
         }
@@ -35,7 +38,7 @@
 .item {
     align-items: center;
     box-sizing: border-box;
-    color: black;
+    color: #494B74;
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -50,10 +53,27 @@
     &.active {
         background: #5c77ff;
 
+        .item-icon {
+            color: #FFF;
+        }
+
         .item-label {
             color: white;
         }
     }
+}
+
+.item-icon,
+.item-label {
+    transition: inherit;
+}
+
+.item-icon {
+    color: #494B74;
+    font-size: 24px;
+    height: 24px;
+    margin-inline-end: 16px;
+    width: 24px;
 }
 
 .item-label {
