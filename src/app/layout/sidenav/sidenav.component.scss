@@ -1,0 +1,114 @@
+.sidenav {
+    color: black;
+    height: 100%;
+    width: 280px;
+    background-color: rgb(245, 245, 248);
+
+    &.collapsed {
+        width: 70px;
+
+        &:not(.open) {
+            .sidenav-toolbar {
+                .title {
+                    opacity: 0;
+                    padding-inline-start: 1.5rem;
+                }
+            }
+
+            ::ng-deep {
+                .sidenav-items {
+                    .subheading,
+                    .item-badge,
+                    .item-label {
+                        opacity: 0;
+                    }
+                    .item-icon {
+                        margin-inline-end: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        &.open {
+            width: 280px;
+        }
+    }
+}
+
+.item {
+    align-items: center;
+    box-sizing: border-box;
+    color: #494B74;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    min-height: 48px;
+    padding: 0.5rem 1.5rem;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    width: 100%;
+
+    &:hover,
+    &.active {
+        background: #5c77ff;
+
+        .item-icon {
+            color: #FFF;
+        }
+
+        .item-label {
+            color: white;
+        }
+    }
+}
+
+.item-icon,
+.item-label {
+    transition: inherit;
+}
+
+.item-icon {
+    color: #494B74;
+    font-size: 24px;
+    height: 24px;
+    margin-inline-end: 16px;
+    width: 24px;
+}
+
+.item-label {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+}
+
+.item-badge {
+    border-radius: 9999px;
+    font-size: 11px;
+    line-height: 20px;
+    margin-inline-start: 0.5rem;
+    padding: 0 7px;
+    text-align: center;
+
+    &.item-icon-badge {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        opacity: 1 !important;
+    }
+}
+
+.sidenav-toolbar {
+    align-items: center;
+    background: rgb(218, 218, 223);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    padding: 0.5rem 1.5rem 0 1.5rem;
+    white-space: nowrap;
+    width: 100%;
+    justify-content: end;
+}

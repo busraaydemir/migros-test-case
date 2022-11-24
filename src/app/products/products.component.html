@@ -1,0 +1,10 @@
+<div class="flex flex-row flex-wrap text-center">
+    <div class="basis-1 md:basis-1/2 lg:basis-1/4 product-list-item" *ngFor="let product of products">
+        <h3> {{product.name | uppercase}}</h3>
+        <p class="font-medium ml-auto mt-3"> Fiyat: {{product.price}}₺ </p>
+        <button mat-stroked-button color="primary" type="button" (click)="addBasket(product)" class="flex"> 
+            <span>Sepete Ekle</span>
+            <span class="ml-3 mt-2" *ngIf="product.loading"><mat-spinner class="inline" [diameter]="18"></mat-spinner></span>
+        </button>        
+    </div>
+</div>
