@@ -1,0 +1,11 @@
+<div class="flex w-100 items-center text-center bg-gray-300 pr-10 pl-10 rounded mb-4" *ngFor="let product of products">
+    <div class="inline mr-auto mt-2">
+        <h2 class="inline"> {{product.name}} </h2>
+        <p class="font-medium"> {{product.price}}₺ </p>
+    </div>
+    <button *ngIf="!product.loading" mat-icon-button type="button" (click)="removeProductFromBasket(product)" color="warn">
+        <mat-icon [icIcon]="removeIcon" size="25px"> </mat-icon>
+    </button>
+
+    <span class="ml-3 mt-2" *ngIf="product.loading"><mat-spinner class="inline" [diameter]="20"></mat-spinner></span>
+</div>
