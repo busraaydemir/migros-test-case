@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { IconModule } from '@visurel/iconify-angular';
 import { RouterModule } from '@angular/router';
+import { MatRippleModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { RouterModule } from '@angular/router';
         MatSidenavModule,
         MatIconModule,
         IconModule,
-        RouterModule
+        RouterModule,
+        MatRippleModule
     ]
 
 })

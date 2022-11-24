@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Basket, Product } from '../core/api';
-import { ProductInBasketService } from '../core/api/productsInBasket/products-in-basket.service';
+import { Basket, Product, ProductInBasketService } from '../core/api';
 import { DecreaseProductsCount } from '../core/store/basket';
+
 import removeIcon from '@iconify/icons-mdi/rubbish-bin-empty';
 import { untilDestroyed, UntilDestroy } from '@ngneat/until-destroy';
 
@@ -12,7 +12,7 @@ import { untilDestroyed, UntilDestroy } from '@ngneat/until-destroy';
   templateUrl: './basket.component.html',
   styleUrls: ['./basket.component.scss']
 })
-export class BasketComponent implements OnInit {
+export class BasketComponent implements OnInit, OnDestroy {
 
   products: Product[] = [];
   basket: Basket;
@@ -44,4 +44,5 @@ export class BasketComponent implements OnInit {
     });
   }
 
+  ngOnDestroy(): void { }
 }
